@@ -6,7 +6,7 @@ This project is a backend for a hospital employee cooperative shop application d
 
 ### Login
 
-**Endpoint:**
+**Endpoint:** `http://localhost:8000/api/user/login`
 
 
 **Request Body:**

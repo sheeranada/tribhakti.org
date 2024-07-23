@@ -1,19 +1,16 @@
-# Nama Proyek
-
-Deskripsi singkat tentang proyek Anda.
+# Tribhakti.org API Documentation
 
 ## Daftar Isi
 
 - [Tentang Proyek](#tentang-proyek)
-- [Fitur](#fitur)
 - [Prasyarat](#prasyarat)
 - [Instalasi](#instalasi)
 - [Konfigurasi](#konfigurasi)
 - [Penggunaan](#penggunaan)
   - [Autentikasi](#autentikasi)
-    - [Registrasi](#registrasi)
     - [Login](#login)
     - [Logout](#logout)
+    - [Registrasi](#registrasi)
   - [Menampilkan Data User](#menampilkan-data-user)
 - [Dokumentasi API](#dokumentasi-api)
 - [Kontribusi](#kontribusi)
@@ -22,13 +19,7 @@ Deskripsi singkat tentang proyek Anda.
 
 ## Tentang Proyek
 
-Penjelasan lebih mendalam tentang tujuan dan latar belakang proyek.
-
-## Fitur
-
-- Fitur 1
-- Fitur 2
-- Fitur 3
+Tribhakti.org adalah aplikasi yang menyediakan layanan XYZ. Dokumentasi ini menjelaskan bagaimana cara menggunakan API yang tersedia.
 
 ## Prasyarat
 
@@ -42,13 +33,13 @@ Penjelasan lebih mendalam tentang tujuan dan latar belakang proyek.
 1. Clone repositori ini
 
     ```bash
-    git clone https://github.com/username/reponame.git
+    git clone https://github.com/username/tribhakti.org.git
     ```
 
 2. Masuk ke direktori proyek
 
     ```bash
-    cd reponame
+    cd tribhakti.org
     ```
 
 3. Install dependensi menggunakan Composer
@@ -91,46 +82,17 @@ Penjelasan lebih mendalam tentang tujuan dan latar belakang proyek.
 
 ### Autentikasi
 
-#### Registrasi
-
-- Endpoint: `POST /api/register`
-- Deskripsi: Membuat akun baru.
-- Permintaan:
-    ```json
-    {
-        "name": "Nama Pengguna",
-        "email": "email@example.com",
-        "password": "password",
-        "password_confirmation": "password"
-    }
-    ```
-- Respons:
-    ```json
-    {
-        "message": "User registered successfully",
-        "user": {
-            "id": 1,
-            "name": "Nama Pengguna",
-            "email": "email@example.com",
-            "created_at": "timestamp",
-            "updated_at": "timestamp"
-        },
-        "token": "Bearer token"
-    }
-    ```
-
 #### Login
 
-- Endpoint: `POST /api/login`
-- Deskripsi: Masuk ke akun yang sudah ada.
-- Permintaan:
+- **Endpoint:** `POST http://localhost:8000/api/user/login`
+- **Body:**
     ```json
     {
-        "email": "email@example.com",
-        "password": "password"
+        "username": "admin123",
+        "password": "11221122"
     }
     ```
-- Respons:
+- **Respons:**
     ```json
     {
         "message": "User logged in successfully",
@@ -140,27 +102,53 @@ Penjelasan lebih mendalam tentang tujuan dan latar belakang proyek.
 
 #### Logout
 
-- Endpoint: `POST /api/logout`
-- Deskripsi: Keluar dari akun yang sedang login.
-- Permintaan: Header Authorization dengan token.
-- Respons:
+- **Endpoint:** `POST http://localhost:8000/api/user/logout`
+- **Deskripsi:** Keluar dari akun yang sedang login.
+- **Permintaan:** Header Authorization dengan token.
+- **Respons:**
     ```json
     {
         "message": "User logged out successfully"
     }
     ```
 
+#### Registrasi
+
+- **Endpoint:** `POST http://localhost:8000/api/user/register`
+- **Body:**
+    ```json
+    {
+        "username": "admin123",
+        "email": "admin123@admin.com",
+        "password": "11221122"
+    }
+    ```
+- **Respons:**
+    ```json
+    {
+        "message": "User registered successfully",
+        "user": {
+            "id": 1,
+            "username": "admin123",
+            "email": "admin123@admin.com",
+            "created_at": "timestamp",
+            "updated_at": "timestamp"
+        },
+        "token": "Bearer token"
+    }
+    ```
+
 ### Menampilkan Data User
 
-- Endpoint: `GET /api/user`
-- Deskripsi: Menampilkan informasi user yang sedang login.
-- Permintaan: Header Authorization dengan token.
-- Respons:
+- **Endpoint:** `GET http://localhost:8000/api/user/show`
+- **Deskripsi:** Menampilkan informasi user yang sedang login.
+- **Permintaan:** Header Authorization dengan token.
+- **Respons:**
     ```json
     {
         "id": 1,
-        "name": "Nama Pengguna",
-        "email": "email@example.com",
+        "username": "admin123",
+        "email": "admin123@admin.com",
         "created_at": "timestamp",
         "updated_at": "timestamp"
     }
@@ -182,4 +170,4 @@ Proyek ini dilisensikan di bawah lisensi MIT - lihat file [LICENSE](link ke file
 
 Nama Anda - [@username](https://twitter.com/username) - email@example.com
 
-Link Proyek: [https://github.com/username/reponame](https://github.com/username/reponame)
+Link Proyek: [https://github.com/username/tribhakti.org](https://github.com/username/tribhakti.org)

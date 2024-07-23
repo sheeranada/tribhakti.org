@@ -6,7 +6,7 @@ This project is a backend for a hospital employee cooperative shop application d
 
 ### Login
 
-**Endpoint:** `http://localhost:8000/api/user/login`
+**Endpoint:** POST `http://localhost:8000/api/user/login`
 
 
 **Request Body:**
@@ -16,3 +16,24 @@ This project is a backend for a hospital employee cooperative shop application d
   "email": "user@example.com",
   "password": "yourpassword"
 }
+
+# Hospital Employee Cooperative Shop Application
+
+This project is a backend for a hospital employee cooperative shop application developed using Laravel 10.
+
+## Authentication Endpoints
+
+### Login
+
+**Endpoint:** POST `http://localhost:8000/api/user/login`
+
+**Request Body:**
+
+```json
+{
+  "email": "user@example.com",
+  "password": "yourpassword"
+}
+
+
+
